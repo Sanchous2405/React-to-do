@@ -4,6 +4,7 @@ import { BsTrash } from "react-icons/bs";
 import cn from "classnames";
 
 const TodoItem = ({ todo, changeTodo, removeTodo }) => {
+  
   return (
     <div className="flex items-center justify-between mb-4 rounded-2xl bg-gray-800 p-5 w-full">
       <button
@@ -14,6 +15,7 @@ const TodoItem = ({ todo, changeTodo, removeTodo }) => {
         <span className={cn({ "line-through": todo.isComplited })}>
           {todo.title}
           <span className="p-80">{todo.date}</span>
+          <span className="p-5">{todo.file}</span>
         </span>
       </button>
       <button onClick={() => removeTodo(todo._id)}>

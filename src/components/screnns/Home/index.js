@@ -8,6 +8,7 @@ const data = [
     title: "Finish the essay ",
     isComplited: false,
     date: new Date().toLocaleDateString(),
+    
   },
   {
     _id: "f",
@@ -20,6 +21,7 @@ const data = [
     title: "Go to university ",
     isComplited: false,
     date: new Date().toLocaleDateString(),
+    
   },
 ];
 
@@ -36,13 +38,14 @@ const Home = () => {
     setTodos([...todos].filter((t) => t._id !== id));
   };
 
-  const addTodo = (title, date) => {
+  const addTodo = (title, date,file) => {
     setTodos([
       {
         _id: new Date(),
         title,
         isComplited: false,
         date: new Date().toLocaleDateString(),
+        file: new FormData(),
       },
 
       ...todos,
@@ -61,6 +64,7 @@ const Home = () => {
         />
       ))}
       <CreateTodoField addTodo={addTodo} />
+    
     </div>
   );
 };
